@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_06_110656) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_07_073827) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -48,6 +48,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_06_110656) do
     t.integer "waiting_for_payment_counter", default: 1
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "status_updated_at", default: "2022-09-07 07:47:12", null: false
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

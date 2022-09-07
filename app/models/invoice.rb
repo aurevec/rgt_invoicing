@@ -8,12 +8,15 @@ class Invoice < ApplicationRecord
 
   enumerize :status, in: [:expired, :paid, :waiting_for_payment], default: :waiting_for_payment, scope: true
 
+  scope :status_updated_between, lambda {|start_date, end_date| where("status_updated_at >= ? AND status_updated_at <= ?", start_date, end_date )}
+
+
   def mark_as_paid  
-    update_attribute(:status, :paid)
+    update(status: :paid, status_updated_at: DateTime.now)
   end
 
   def mark_as_waiting_for_payment 
-    update_attribute(:status, :waiting_for_payment)
+    update(status: :waiting_for_payment, status_updated_at: DateTime.now)
   end
 
   def document_url

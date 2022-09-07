@@ -18,7 +18,7 @@ class MarkInvoiceAsWaitingForPayment
   end
 
   def send_email 
-    CustomerMailer.reminder(@context.invoice).deliver
+    CustomerMailer.reminder(@context.invoice).deliver_later
   end
   
 end
