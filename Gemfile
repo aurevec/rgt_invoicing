@@ -16,6 +16,8 @@ gem 'slim', '~> 4.1'
 gem 'rabl', '~> 0.16.0'
 gem 'mjml-rails'
 
+gem 'sidekiq', '~> 6.5', '>= 6.5.6'
+
 gem "puma", "~> 5.0"
 
 gem "jbuilder"
@@ -26,6 +28,10 @@ gem 'active_storage_validations', '~> 0.9.8'
 gem 'enumerize', '~> 2.5'
 
 gem 'interactor-rails', '~> 2.2', '>= 2.2.1'
+
+gem "aws-sdk-s3", require: false
+
+gem 'appsignal'
 
 group :development do
   gem "web-console"
