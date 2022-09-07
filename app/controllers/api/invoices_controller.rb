@@ -50,6 +50,10 @@ class Api::InvoicesController < Api::BaseController
         "invoices.updated_at"
       when "created_at"
         "invoices.created_at"
+      when "status_updated_at"
+        "invoices.status_updated_at"
+      when "status"
+        "invoices.status"
       else
         "invoices.email"
       end
