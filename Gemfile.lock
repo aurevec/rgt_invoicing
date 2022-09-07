@@ -286,6 +286,7 @@ DEPENDENCIES
   enumerize (~> 2.5)
   interactor-rails (~> 2.2, >= 2.2.1)
   jbuilder
+  kaminari (~> 1.2, >= 1.2.2)
   letter_opener
   mjml-rails
   pg

@@ -32,6 +32,8 @@ gem 'enumerize', '~> 2.5'
 
 gem 'interactor-rails', '~> 2.2', '>= 2.2.1'
 
+gem 'kaminari', '~> 1.2', '>= 1.2.2'
+
 gem "aws-sdk-s3", require: false
 
 gem 'appsignal'

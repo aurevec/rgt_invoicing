@@ -10,6 +10,8 @@ class Api::InvoicesController < Api::BaseController
       Invoice.all
     end
 
+    @invoices = @invoices.page(params[:page] || 1).per(params[:per] || 10)
+
     render "/api/invoices/index"
   end
 
