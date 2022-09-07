@@ -10,7 +10,7 @@ class Api::InvoicesController < Api::BaseController
       Invoice.all
     end
 
-    @invoices = @invoices.page(params[:page] || 1).per(params[:per] || 10)
+    @invoices = @invoices.order(build_sort_by).page(params[:page] || 1).per(params[:per] || 10)
 
     render "/api/invoices/index"
   end
@@ -39,6 +39,22 @@ class Api::InvoicesController < Api::BaseController
 
   def invoice_params
     params.require(:invoice).permit(:email, :document)
+  end
+
+  def build_sort_by
+    order = params[:sort_by] || "updated_at"
+    direction = params[:sort_direction] || "desc"
+
+    order = case order
+      when "updated_at"
+        "invoices.updated_at"
+      when "created_at"
+        "invoices.created_at"
+      else
+        "invoices.email"
+      end
+
+    { order => direction }
   end
 
 end
