@@ -15,6 +15,7 @@ class Api::InvoicesController < Api::BaseController
 
   def create
     @invoice = Invoice.new(invoice_params)
+    @invoice.status_updated_at = DateTime.now
 
     if @invoice.save
       render "/api/invoices/show", status: :created
@@ -37,5 +38,5 @@ class Api::InvoicesController < Api::BaseController
   def invoice_params
     params.require(:invoice).permit(:email, :document)
   end
-  
+
 end
