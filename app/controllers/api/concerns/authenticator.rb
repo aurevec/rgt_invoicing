@@ -11,7 +11,7 @@ module Api
   
         def http_authenticate
           authenticate_or_request_with_http_basic do |username, password|
-            username == 'regate_invoicing' && password == 'aurelien'
+            username == Rails.application.credentials.dig(:basic_auth, :username) && password == Rails.application.credentials.dig(:basic_auth, :password)
           end
         end
   
