@@ -10,6 +10,9 @@ gem 'rack-cors'
 gem "pg"
 gem "redis", "~> 4.0"
 
+gem 'trestle'
+gem 'sass-rails'
+
 gem "sprockets-rails"
 
 gem 'slim', '~> 4.1'
