@@ -1,0 +1,10 @@
+mj-section background-color="#fcfcfc" padding-bottom="0px"
+  mj-column width="100%"
+    mj-text align="center" color="grey" font-family=("Gotham, Gotham B, Helvetica, Arial, sans-serif") font-size="20px" font-weight="200"
+      = t('emails.customer.reminder.headline', user_email: "#{@invoice.email}")
+    mj-divider border-color="#f8f8f8" border-width="1px" padding-bottom="0px" padding-left="0px" padding-right="0px" padding-top="20px"
+
+mj-section background-color="white"
+  mj-column width="550px"
+    mj-text
+      = t('emails.customer.reminder.line_1_html')

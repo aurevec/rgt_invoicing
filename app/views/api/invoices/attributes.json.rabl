@@ -1,0 +1,1 @@
+attributes :id, :email, :status, :document_url, :created_at, :updated_at, :waiting_for_payment_counter
